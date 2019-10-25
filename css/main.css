@@ -1,0 +1,42 @@
+body {
+    background-color: darkslategray;
+}
+
+h1 {
+    color: darkolivegreen; 
+    font-family: 'Helvetica', sans-serif; 
+    font-size: 50px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    text-align: center; 
+}
+
+table {
+    display: flex;
+    justify-content: center;
+}
+
+tr {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+td {
+    background-color: darkslategrey;
+    height: 100px;
+    width: 100px;
+    border: .25rem solid black;
+    text-align: center;
+}
+
+#play-again {
+    color: darkolivegreen;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    background-color: black;
+    border: none;
+    height: 25px;
+    width: 50px;
+    border-radius: 10%;
+}
