@@ -1,7 +1,5 @@
 /*----- constants -----*/
-//value of x (1)
-//value of o (-1)
-//8 possible winning combos
+
 const player1 = 'X';
 const player2 = 'O';
 const winning_combo = [
@@ -19,7 +17,8 @@ const winning_combo = [
 //whose turn it is
 //winner
 
-// let 
+let playCount = [];
+let playCombo = ''; 
 
 
 /*----- cached element references -----*/
@@ -42,8 +41,8 @@ document.querySelector('.board').addEventListener('click', handleCellClick);
 /*----- functions -----*/
 //handlers(deals with event)
 //global state
-
+// when you click the cell, the function puts an x or an o
 function handleCellClick(evt) {
-    
-    console.log(evt);
+    let player1 = document.getElementById(evt.path['0'].id);
+    player1.textContent = 'X';
 }
