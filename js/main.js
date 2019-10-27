@@ -85,8 +85,6 @@ function handleCellClick(evt){
 // function checkWinner() {
 
 // }
-
-
 //function for a tie
 
 //function for reset game button
