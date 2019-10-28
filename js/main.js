@@ -13,6 +13,9 @@ const winning_combo = [
     [2, 4, 6]
 ];
 
+//cannot strictly compare arrays
+//do an empty array for winning combo? and then push each id of the box clicked
+// to the player1score array and 
 /*----- app's state (variables) -----*/
 
 let playCount = [];
@@ -21,7 +24,7 @@ let totalMvs = [];
 let player1Score = [];
 let player2Score = [];
 
-//cannot strictly compare arrays
+
 
 /*----- cached element references -----*/
 
@@ -29,29 +32,27 @@ let player2Score = [];
 
 
 /*----- event listeners -----*/
-//when a cell is clicked
 //when play again button is clicked
 
 document.querySelector('.board').addEventListener('click', handleCellClick);
  
-
-// document.getElementById('play-again')
-//     .addEventListener('click', handleButtonClick);
+document.querySelector('.play-again').addEventListener('click', handleButtonClick);
 
 
 
 /*----- functions -----*/
-
+init ();
 // when you click the cell, the function puts an x or an o
 function handleCellClick(evt) {
     let player1 = document.getElementById(evt.path['0'].id);
     player1.textContent = 'X';
+
 };
 
 
 //alternating x and o for player1 and player2
 function handleCellClick(evt){
-    totalMvs ++;
+    totalMvs ++; //moves through each move one by one
     if(totalMvs % 2 !== 0){
         evt.target.textContent = player1;
         player1Score.push(evt.target.textContent);
@@ -88,4 +89,8 @@ function handleCellClick(evt){
 //function for a tie
 
 //function for reset game button
-
+// set page to refresh
+function handleButtonClick(evt) {
+    let PlayButton = document.getElementById('play-again');
+    window.location.reload(true)
+};
