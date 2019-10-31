@@ -23,7 +23,7 @@ let playCombo = [];
 let totalMvs = [];
 let player1Score = [];
 let player2Score = [];
-let move = -1;
+let move = 1;
 
 
 /*----- cached element references -----*/
@@ -32,7 +32,6 @@ let move = -1;
 
 
 /*----- event listeners -----*/
-//when play again button is clicked
 
 document.querySelector('.board').addEventListener('click', handleCellClick);
 
@@ -41,9 +40,10 @@ document.getElementById('reset').addEventListener('click', handleButtonClick);
 
 /*----- functions -----*/
 // init ();
-// when you click the cell, the function puts an x or an o
+// 
 function handleCellClick(evt) {
     let currentCell = evt.target;
+    if (currentCell.textContent) return
 
     if (move === 1) {
         currentCell.textContent = player1;
@@ -59,10 +59,6 @@ function handleCellClick(evt) {
 //need to not allow player to click a cell that is already occupied
 //if td already has a value, return the function
 
-
-//need a function to check for a winner, running through the nested array of possible winning combos
-// function checkWinner() 
-//function for a tie
 
 //function for reset game button
 function handleButtonClick(evt) {
