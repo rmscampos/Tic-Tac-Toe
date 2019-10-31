@@ -23,7 +23,7 @@ let playCombo = [];
 let totalMvs = [];
 let player1Score = [];
 let player2Score = [];
-
+let move = -1;
 
 
 /*----- cached element references -----*/
@@ -35,62 +35,36 @@ let player2Score = [];
 //when play again button is clicked
 
 document.querySelector('.board').addEventListener('click', handleCellClick);
- 
-document.querySelector('.play-again').addEventListener('click', handleButtonClick);
 
+document.getElementById('reset').addEventListener('click', handleButtonClick);
 
 
 /*----- functions -----*/
-init ();
+// init ();
 // when you click the cell, the function puts an x or an o
 function handleCellClick(evt) {
-    let player1 = document.getElementById(evt.path['0'].id);
-    player1.textContent = 'X';
+    let currentCell = evt.target;
 
-};
-
-
-//alternating x and o for player1 and player2
-function handleCellClick(evt){
-    totalMvs ++; //moves through each move one by one
-    if(totalMvs % 2 !== 0){
-        evt.target.textContent = player1;
-        player1Score.push(evt.target.textContent);
-      } else {
-        evt.target.textContent = player2;
+    if (move === 1) {
+        currentCell.textContent = player1;
+        move *= -1;
+    } else {
+        currentCell.textContent = player2;
+        move *= -1;
     };
 };
+
+
  
 //need to not allow player to click a cell that is already occupied
 //if td already has a value, return the function
 
-// function handleTDClick(evt) {
-//     let playLetter = document.getElementById(evt.path["0"].id);
-//     playCount.push(evt.target.value);
-//     renderTurnMessage();
-//     if (playLetter.textContent === ("X") || (playLetter.textContent === ("O"))) {
-//         return 
-//     } 
-//     else if (playCount.length % 2 === 1) {
-//         playLetter.textContent = playerX;
-//         playerXScore.push(playLetter.id)
-//     } else if (playCount.length % 2 === 0) {
-//         playLetter.textContent = playerO;
-//         playerOScore.push(playLetter.id)
-//     }
-//  return   
-// };
-
 
 //need a function to check for a winner, running through the nested array of possible winning combos
-// function checkWinner() {
-
-// }
+// function checkWinner() 
 //function for a tie
 
 //function for reset game button
-// set page to refresh
 function handleButtonClick(evt) {
-    let PlayButton = document.getElementById('play-again');
     window.location.reload(true)
 };

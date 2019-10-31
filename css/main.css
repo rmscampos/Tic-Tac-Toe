@@ -30,7 +30,7 @@ td {
     text-align: center;
 }
 
-.play-again {
+#reset {
     display: inline-block;
     color: darkolivegreen;
     font-family: 'Helvetica', sans-serif;
